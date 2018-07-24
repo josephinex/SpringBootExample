@@ -3,12 +3,10 @@ package com.app.controller;
 import com.app.entity.Student;
 import com.app.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/students")
@@ -16,13 +14,13 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Collection<Student> getAllStudents(){
+    /*@RequestMapping(method = RequestMethod.GET)
+    public List<Student> getAllStudents(){
         return studentService.getAllStudents();
-    }
+    }*/
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
-    public Student getStudentById(@PathVariable("id") int id){
+    public Student getStudentById(@PathVariable("id") Long id){
         return studentService.getStudentById(id);
     }
 

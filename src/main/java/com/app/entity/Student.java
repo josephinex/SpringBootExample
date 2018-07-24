@@ -1,28 +1,30 @@
 package com.app.entity;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Component
+@Entity
 public class Student {
-    private int id;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Id
+    private Long id;
+
     private String name;
     private String course;
 
     public Student(){}
 
-    public Student(int id, String name, String course) {
+    public Student(String name, String course, Long id) {
         this.id = id;
         this.name = name;
         this.course = course;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
