@@ -13,7 +13,5 @@ import java.util.Map;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long>{
 
- /*   List<Student> getAllStudents();*/
-
     Student getStudentById(Long id);
 }

@@ -14,9 +14,9 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-/*    public List<Student> getAllStudents(){
-        return studentRepository.getAllStudents();
-    }*/
+    public List<Student> getAllStudents(){
+        return studentRepository.findAll();
+    }
 
     public Student getStudentById(Long id){
         return this.studentRepository.getStudentById(id);
